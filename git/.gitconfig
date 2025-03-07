@@ -1,0 +1,9 @@
+[user]
+	email = filgreen@pm.me
+	name = Filipo
+[core]
+	editor = nvim
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
