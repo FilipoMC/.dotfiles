@@ -83,10 +83,11 @@ alias ls='ls --color'
 alias vim='nvim'
 alias vi="nvim"
 alias lgit="lazygit"
+alias z="zoxide"
 
 # Shell integrations
 eval "$(fzf --zsh)"
-# eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
