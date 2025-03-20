@@ -39,6 +39,7 @@ local plugins = {
   },
   {
     "windwp/nvim-ts-autotag",
+    lazy = false,
     config = function ()
       require("nvim-ts-autotag").setup()
     end
@@ -75,12 +76,6 @@ local plugins = {
           accept_word = "<C-m>"
         }
       })
-    end
-  },
-  {
-    "lewis6991/gitsigns.nvim",
-    config = function ()
-      require("gitsigns").setup()
     end
   },
   {
