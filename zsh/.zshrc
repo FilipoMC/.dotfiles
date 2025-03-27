@@ -33,6 +33,10 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+# zinit light jeffreytse/zsh-vi-mode
+zinit light zshzoo/cd-ls
+zinit light givensuman/zsh-allclear
+zinit light mollifier/cd-gitroot
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
@@ -51,6 +55,9 @@ zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Set variables
+EDITOR=nvim
 
 # Keybindings
 bindkey -e
@@ -79,11 +86,12 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
+alias ls='eza --icons -L 2 --git --git-repos --no-permissions'
 alias vim='nvim'
 alias vi="nvim"
 alias lgit="lazygit"
 alias z="zoxide"
+alias cdg="cd-gitroot"
 
 # Shell integrations
 eval "$(fzf --zsh)"
