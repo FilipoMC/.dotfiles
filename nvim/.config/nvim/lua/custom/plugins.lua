@@ -29,6 +29,10 @@ local plugins = {
   --   end
   -- },
   {
+   "jeffkreeftmeijer/vim-numbertoggle",
+    lazy = false,
+  },
+  {
     "andweeb/presence.nvim",
     lazy = false,
     config = function()
@@ -78,13 +82,13 @@ local plugins = {
       })
     end
   },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "VeryLazy",
-    opts = function ()
-      return require "custom.configs.null-ls"
-    end
-  },
+  -- {
+  --   "jose-elias-alvarez/null-ls.nvim",
+  --   event = "VeryLazy",
+  --   opts = function ()
+  --     return require "custom.configs.null-ls"
+  --   end
+  -- },
   {
     "williamboman/mason.nvim",
     opts = {
