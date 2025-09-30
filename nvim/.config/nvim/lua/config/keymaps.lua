@@ -4,4 +4,17 @@
 
 local map = vim.keymap.set
 
+local dap = require("dap")
+
 map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+
+-- Build & debug
+map("n", "<F6>", function()
+  require("config.dap").build_and_debug()
+end, { noremap = true, silent = true })
+
+-- Standard debugger controls
+map("n", "<F5>", dap.continue, { noremap = true, silent = true })
+map("n", "<F10>", dap.step_over, { noremap = true, silent = true })
+map("n", "<F11>", dap.step_into, { noremap = true, silent = true })
+map("n", "<F12>", dap.step_out, { noremap = true, silent = true })
