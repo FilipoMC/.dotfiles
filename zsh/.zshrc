@@ -15,8 +15,6 @@ path=(
   ~/.cargo/bin
 )
 
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.uiScale=1"
-
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -65,6 +63,8 @@ zinit cdreplay -q
 
 # Set variables
 EDITOR=nvim
+SHELL=zsh
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.uiScale=1"
 
 # Keybindings
 bindkey -e
@@ -100,6 +100,7 @@ alias lgit="lazygit"
 alias z="zoxide"
 alias cdg="cd-gitroot"
 alias wlc="wl-copy"
+alias ze="zellij"
 
 # Shell integrations
 eval "$(fzf --zsh)"
