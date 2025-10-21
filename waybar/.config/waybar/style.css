@@ -106,6 +106,7 @@ button:hover {
 #mode,
 #custom-keyboard-layout,
 #custom-gammastep,
+#custom-caps2esc-status,
 #tray {
   padding: 0 10px;
   margin: 5px 1px;
@@ -140,6 +141,18 @@ button:hover {
 
 #custom-keyboard-layout.ru {
   background-color: @blue;
+}
+
+#custom-caps2esc-status {
+  color: @mantle;
+}
+
+#custom-caps2esc-status.on {
+  background-color: @maroon;
+}
+
+#custom-caps2esc-status.off {
+  background-color: @green;
 }
 
 #custom-weather {

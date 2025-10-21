@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 
 local map = vim.keymap.set
+local unmap = vim.keymap.del
 
 local dap = require("dap")
 
@@ -18,3 +19,8 @@ map("n", "<F5>", dap.continue, { noremap = true, silent = true })
 map("n", "<F10>", dap.step_over, { noremap = true, silent = true })
 map("n", "<F11>", dap.step_into, { noremap = true, silent = true })
 map("n", "<F12>", dap.step_out, { noremap = true, silent = true })
+
+map("i", "<C-h>", "<Left>")
+map("i", "<C-j>", "<Down>")
+map("i", "<C-k>", "<Up>")
+map("i", "<C-l>", "<Right>")

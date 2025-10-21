@@ -8,6 +8,7 @@
     "custom/gammastep",
     "disk#ssd",
     "custom/keyboard-layout",
+    "custom/caps2esc-status",
     "temperature",
     "cpu",
     "memory",
@@ -30,6 +31,13 @@
     "interval": 1,
     "return-type": "json",
     "on-click": "~/.config/hypr/switch-layout.sh",
+  },
+  "custom/caps2esc-status": {
+    "exec": "~/.config/waybar/get_caps2esc_status.sh",
+    "interval": 1,
+    "signal": 9,
+    "return-type": "json",
+    "on-click": "~/.config/hypr/toggle-caps2esc.sh",
   },
   "bluetooth": {
     "format-on": "bt ",
