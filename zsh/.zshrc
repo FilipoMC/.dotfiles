@@ -62,8 +62,8 @@ zinit cdreplay -q
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Set variables
-EDITOR=nvim
-SHELL=zsh
+export EDITOR=nvim
+export SHELL=zsh
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.uiScale=1"
 
 # Keybindings
