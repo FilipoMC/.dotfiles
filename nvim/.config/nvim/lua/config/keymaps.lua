@@ -11,6 +11,7 @@ map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, s
 
 -- Build & debug
 map("n", "<F6>", function()
+  vim.cmd("wa")
   require("config.dap").build_and_debug()
 end, { noremap = true, silent = true })
 

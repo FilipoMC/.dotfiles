@@ -5,7 +5,8 @@ local function get_executable()
 end
 
 function M.build_and_debug()
-  vim.fn.system("cmake --build build -DCMAKE_BUILD_TYPE=Debug")
+  vim.fn.system("cmake -B build")
+  vim.fn.system("cmake --build build")
   local exe = get_executable()
   if exe then
     require("dap").run({
