@@ -6,7 +6,7 @@ return {
       function()
         require("ouroboros").switch()
       end,
-      desc = "Swich between header and impl",
+      desc = "Switch between header and impl",
     },
   },
 }

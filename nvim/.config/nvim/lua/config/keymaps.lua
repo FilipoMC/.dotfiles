@@ -9,6 +9,10 @@ local dap = require("dap")
 
 map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 
+map("n", "<S-m>", function()
+  vim.diagnostic.open_float()
+end)
+
 -- Build & debug
 map("n", "<F6>", function()
   vim.cmd("wa")

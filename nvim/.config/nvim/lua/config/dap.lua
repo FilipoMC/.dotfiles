@@ -5,7 +5,7 @@ local function get_executable()
 end
 
 function M.build_and_debug()
-  vim.fn.system("cmake -B build")
+  vim.fn.system("cmake -DCMAKE_BUILD_TYPE=Debug -B build")
   vim.fn.system("cmake --build build")
   local exe = get_executable()
   if exe then
@@ -18,7 +18,7 @@ function M.build_and_debug()
       stopOnEntry = false,
     })
   else
-    print("Executable not found!")
+    vim.notify("Executable not found!")
   end
 end
 
