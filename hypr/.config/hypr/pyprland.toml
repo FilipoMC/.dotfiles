@@ -1,7 +1,5 @@
 [pyprland]
-plugins = [
-  "scratchpads"
-]
+plugins = ["scratchpads"]
 
 [scratchpads.term]
 animation = "fromTop"
@@ -28,7 +26,7 @@ offset = "200%"
 [scratchpads.spotify]
 animation = "fromTop"
 command = "spotify"
-class = "Spotify"
+class = "spotify"
 size = "45% 55%"
 offset = "200%"
 
