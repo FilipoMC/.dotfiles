@@ -93,7 +93,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='eza --icons -L 2 --git --git-repos --no-permissions'
+ezacmd='eza --icons -L 2 --git --git-repos'
+alias lsp="$ezacmd"
+alias ls="$ezacmd --no-permissions"
 alias vim='nvim'
 alias vi="nvim"
 alias lgit="lazygit"
