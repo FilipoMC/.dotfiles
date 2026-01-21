@@ -8,6 +8,8 @@ class = "kitty-dropterm"
 position = "17% 6%"
 size = "65% 60%"
 offset = "200%"
+excludes = ["spotify"]
+lazy = false
 
 [scratchpads.onps]
 animation = "fromRight"
@@ -15,6 +17,7 @@ command = "kitty --class kitty-onps onps"
 class = "kitty-onps"
 size = "10% 20%"
 offset = "200%"
+excludes = ["network", "bt"]
 
 [scratchpads.music]
 animation = "fromBottom"
@@ -29,6 +32,8 @@ command = "spotify"
 class = "spotify"
 size = "45% 55%"
 offset = "200%"
+excludes = ["term"]
+lazy = false
 
 [scratchpads.taskbar]
 animation = "fromLeft"
@@ -43,6 +48,8 @@ command = "kitty --class kitty-network -e ~/.config/hypr/nmtui.sh"
 class = "kitty-network"
 size = "20% 60%"
 offset = "200%"
+excludes = ["onps", "bt"]
+lazy = false
 
 [scratchpads.bt]
 animation = "fromRight"
@@ -50,3 +57,5 @@ command = "kitty --class kitty-bt -e bluetui"
 class = "kitty-bt"
 size = "20% 60%"
 offset = "200%"
+excludes = ["network", "onps"]
+lazy = false
