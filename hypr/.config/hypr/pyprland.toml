@@ -34,6 +34,8 @@ size = "45% 55%"
 offset = "200%"
 excludes = ["term"]
 lazy = false
+unfocus = "hide"
+hysteresis = 0
 
 [scratchpads.taskbar]
 animation = "fromLeft"
