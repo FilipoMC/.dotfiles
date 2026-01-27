@@ -13,6 +13,7 @@ fi
 path=(
   $path
   ~/.cargo/bin
+  ~/.local/bin
 )
 
 # Set the directory we want to store zinit and plugins
@@ -102,7 +103,8 @@ alias lgit="lazygit"
 alias z="zoxide"
 alias cdg="cd-gitroot"
 alias wlc="wl-copy"
-alias ze="zellij"
+alias mkdir="mkdir -p"
+alias cat="bat"
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -114,4 +116,13 @@ function y() {
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
+}
+
+function mkcd() {
+  if [ -z "$1" ]; then
+    builtin echo "Please provide a directory name."
+    return 1
+  fi
+
+  command mkdir -p -- $1 ; builtin cd -- $1
 }

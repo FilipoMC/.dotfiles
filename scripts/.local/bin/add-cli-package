@@ -1,0 +1,8 @@
+#!/bin/env bash
+
+if [[ -z "$1" ]]; then
+  echo "Please provide a package name."
+  exit 1
+fi
+
+echo "$*" | tr " " "\n" >>"$HOME/.system-setup-utils/cli-packages.txt"

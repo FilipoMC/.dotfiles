@@ -1,0 +1,15 @@
+zsh
+zoxide
+eza
+tmux
+neovim
+bat
+lazygit
+fzf
+ripgrep
+fd
+yazi
+nodejs
+npm
+pnpm
+github-cli
