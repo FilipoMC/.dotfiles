@@ -13,3 +13,4 @@ nodejs
 npm
 pnpm
 github-cli
+jless
