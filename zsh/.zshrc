@@ -110,10 +110,13 @@ alias cdg="cd-gitroot"
 alias wlc="wl-copy"
 alias mkdir="mkdir -p"
 alias cat="bat"
+alias hyprexec="hyprctl dispatch exec --"
+alias yt-mp3="yt-dlp -x --audio-format mp3"
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
