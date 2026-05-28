@@ -110,7 +110,6 @@ alias cdg="cd-gitroot"
 alias wlc="wl-copy"
 alias mkdir="mkdir -p"
 alias cat="bat"
-alias hyprexec="hyprctl dispatch exec --"
 alias yt-mp3="yt-dlp -x --audio-format mp3"
 
 # Shell integrations
@@ -134,3 +133,11 @@ function mkcd() {
 
   command mkdir -p -- $1 ; builtin cd -- $1
 }
+
+# Begin: PlatformIO Core completion support
+eval "$(_PIO_COMPLETE=zsh_source pio)"
+# End: PlatformIO Core completion support
+
+# node version manager
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
