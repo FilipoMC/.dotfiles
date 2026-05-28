@@ -1,0 +1,93 @@
+[[mgr.prepend_keymap]]
+on = ["H"]
+run = 'shell "glry \"$PWD\"" --block'
+
+#####################
+###### PLUGINS ######
+#####################
+# Copy yanked files to the system clipboard
+[[mgr.prepend_keymap]]
+on = "<S-y>"
+run = ['yank', 'plugin clipboard -- --action=copy']
+
+# Paste files from the system clipboard into the current directory
+[[mgr.prepend_keymap]]
+on = "<S-p>"
+run = ['plugin clipboard -- --action=paste']
+
+[[mgr.prepend_keymap]]
+on = "<Enter>"
+run = "plugin wise-enter"
+desc = "Wise enter"
+
+#### GVFS KEYMAPS START ####
+[[mgr.prepend_keymap]]
+on = ["M", "m"]
+run = "plugin gvfs -- select-then-mount"
+desc = "Select device then mount"
+
+[[mgr.prepend_keymap]]
+on = ["M", "m"]
+run = "plugin gvfs -- select-then-mount --jump"
+desc = "Select device to mount and jump to its mount point"
+
+[[mgr.prepend_keymap]]
+on = ["M", "R"]
+run = "plugin gvfs -- remount-current-cwd-device"
+desc = "Remount device under cwd"
+
+[[mgr.prepend_keymap]]
+on = ["M", "u"]
+run = "plugin gvfs -- select-then-unmount"
+desc = "Select device then unmount"
+
+[[mgr.prepend_keymap]]
+on = ["M", "u"]
+run = "plugin gvfs -- select-then-unmount --eject"
+desc = "Select device then eject"
+
+[[mgr.prepend_keymap]]
+on = ["M", "U"]
+run = "plugin gvfs -- select-then-unmount --eject --force"
+desc = "Select device then force to eject/unmount"
+
+[[mgr.prepend_keymap]]
+on = ["M", "a"]
+run = "plugin gvfs -- add-mount"
+desc = "Add a GVFS mount URI"
+
+[[mgr.prepend_keymap]]
+on = ["M", "e"]
+run = "plugin gvfs -- edit-mount"
+desc = "Edit a GVFS mount URI"
+
+[[mgr.prepend_keymap]]
+on = ["M", "r"]
+run = "plugin gvfs -- remove-mount"
+desc = "Remove a GVFS mount URI"
+
+[[mgr.prepend_keymap]]
+on = ["g", "m"]
+run = "plugin gvfs -- jump-to-device"
+desc = "Select device then jump to its mount point"
+
+[[mgr.prepend_keymap]]
+on = ["g", "m"]
+run = "plugin gvfs -- jump-to-device --automount"
+desc = "Automount then select device to jump to its mount point"
+
+[[mgr.prepend_keymap]]
+on = ["`", "`"]
+run = "plugin gvfs -- jump-back-prev-cwd"
+desc = "Jump back to the position before jumped to device"
+
+[[mgr.prepend_keymap]]
+on = ["M", "t"]
+run = "plugin gvfs -- automount-when-cd"
+desc = "Enable automount when cd to device under cwd"
+
+[[mgr.prepend_keymap]]
+on = ["M", "T"]
+run = "plugin gvfs -- automount-when-cd --disabled"
+desc = "Disable automount when cd to device under cwd"
+#### GVFS KEYMAPS END ####

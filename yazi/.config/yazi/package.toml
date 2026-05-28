@@ -1,0 +1,17 @@
+[[plugin.deps]]
+use = "XYenon/clipboard"
+rev = "0ac0320"
+hash = "f80172438b4b5c31e94d6c891f734445"
+
+[[plugin.deps]]
+use = "jaam8/wise-enter"
+rev = "341f289"
+hash = "f35a1a045c1dd63160fcfb62b9cb082a"
+
+[[plugin.deps]]
+use = "boydaihungst/gvfs"
+rev = "3abc0a2"
+hash = "eed89e75671723c8f9390a2862af0e4e"
+
+[flavor]
+deps = []
