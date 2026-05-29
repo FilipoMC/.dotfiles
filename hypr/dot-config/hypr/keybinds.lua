@@ -1,9 +1,12 @@
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + return", hl.dsp.exec_cmd("kitty"))
+local terminal = "kitty"
+local file_manager = "kitty --class file_manager -o confirm_os_window_close=0 zsh -lic yazi"
+
+hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + ALT + CTRL + Q", hl.dsp.window.kill())
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("nemo"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(file_manager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float())
 hl.bind(mainMod .. " + ALT + V", hl.dsp.window.pin())
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("fuzzel"))
@@ -105,6 +108,10 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 	hl.bind(mainMod .. " + ALT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
+
+hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "empty" }))
+hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "empty" }))
+hl.bind(mainMod .. " + ALT + grave", hl.dsp.window.move({ workspace = "empty", follow = false }))
 
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + A", hl.dsp.workspace.toggle_special("a"))
