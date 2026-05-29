@@ -13,5 +13,20 @@ use = "boydaihungst/gvfs"
 rev = "3abc0a2"
 hash = "eed89e75671723c8f9390a2862af0e4e"
 
+[[plugin.deps]]
+use = "XYenon/yafg"
+rev = "e6ba851"
+hash = "9558dd9169cbf01eac6044583c426716"
+
+[[plugin.deps]]
+use = "Jormala/relative-motions"
+rev = "d4f2003"
+hash = "e0017cae4c0772dd41b7e7c259a6e683"
+
+[[plugin.deps]]
+use = "ciarandg/cd-git-root"
+rev = "a0e0f4b"
+hash = "b84a85f3b513bd9c0a0ab93cc7c8e4c3"
+
 [flavor]
 deps = []
