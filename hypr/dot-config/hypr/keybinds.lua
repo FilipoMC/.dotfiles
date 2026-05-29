@@ -155,3 +155,18 @@ hl.bind("mouse:276", hl.dsp.pass({ window = "class:^(discord)$" }), { non_consum
 
 -- Autoclicker toggle
 hl.bind("CTRL + Y", hl.dsp.pass({ window = "class:^(BlurAutoClicker)$" }, { non_consuming = true }))
+
+-- Discord overlay toggle
+hl.bind(mainMod .. " + G", function()
+	local handle = io.popen("pgrep -f discover-overlay")
+	if handle ~= nil then
+		local pid = handle:read("*a"):gsub("\n$", "")
+		handle:close()
+
+		if pid ~= "" then
+			hl.exec_cmd("kill " .. pid)
+		else
+			hl.exec_cmd("discover-overlay")
+		end
+	end
+end)
