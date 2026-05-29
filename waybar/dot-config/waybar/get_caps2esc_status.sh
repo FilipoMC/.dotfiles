@@ -10,7 +10,7 @@ if [ "$RUNNING" = true ]; then
   state="on"
   class="on"
 else
-  state="of"
+  state="off"
   class="off"
 fi
 

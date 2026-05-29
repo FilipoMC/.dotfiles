@@ -16,7 +16,6 @@
     "network",
     "pulseaudio",
     "clock",
-    "custom/weather",
   ],
 
   "custom/gammastep": {

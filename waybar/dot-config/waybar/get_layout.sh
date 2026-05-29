@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the first connected keyboard name
-keyboard="razer-blackshark-v2-pro-2.4-consumer-control"
+keyboard="razer-razer-blackwidow-v3-7"
 
 # Get the active keymap for that keyboard
 layout=$(hyprctl devices -j | jq -r --arg kb "$keyboard" '.keyboards[] | select(.name == $kb) | .active_keymap')
@@ -23,4 +23,5 @@ case "$layout" in
 esac
 
 # Output JSON for Waybar
+# printf '{"text":"%s","class":"%s"}\n' "$code" "$class"
 printf '{"text":"%s","class":"%s"}\n' "$code" "$class"
