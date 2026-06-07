@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+set -euo pipefail
+
+wp_dir=${WP_DIR:-${1:-"$HOME/Pictures/.wallpapers"}}
+
+wp=$(find "$wp_dir"/ -type f ! -name active -printf "%P\n" | fzf)
+
+command ln -sfn "$wp_dir/$wp" "$wp_dir/active"
+
+pkill hyprpaper || true
+hyprctl eval 'hl.exec_cmd("hyprpaper")'

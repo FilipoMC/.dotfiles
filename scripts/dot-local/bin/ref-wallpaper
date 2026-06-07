@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+pkill hyprpaper
+hyprctl eval 'hl.exec_cmd("hyprpaper")'

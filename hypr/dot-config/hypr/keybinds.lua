@@ -170,3 +170,9 @@ hl.bind(mainMod .. " + G", function()
 		end
 	end
 end)
+
+-- wallpaper change
+hl.bind(
+	mainMod .. " + CTRL + W",
+	hl.dsp.exec_cmd("kitty --class wallpaper_picker -o confirm_os_window_close=0 change-wallpaper")
+)
