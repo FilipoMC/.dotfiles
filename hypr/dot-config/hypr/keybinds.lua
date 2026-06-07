@@ -41,6 +41,16 @@ hl.bind(
 	hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh bright_up"),
 	{ repeating = true }
 )
+hl.bind(
+	mainMod .. " + ALT + bracketleft",
+	hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh gamma_down"),
+	{ repeating = true }
+)
+hl.bind(
+	mainMod .. " + ALT + bracketright",
+	hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh gamma_up"),
+	{ repeating = true }
+)
 hl.bind(mainMod .. " + CTRL + bracketleft", hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh reset"))
 hl.bind(mainMod .. " + CTRL + bracketright", hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh off"))
 
@@ -97,8 +107,6 @@ hl.bind(mainMod .. " + tab", hl.dsp.exec_cmd("pypr toggle term"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("pypr toggle network"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("pypr toggle bt"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pypr toggle onps"))
-
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("hyprctl dispatch darkwindow:shadeactive invert"))
 
 -- Workspaces
 

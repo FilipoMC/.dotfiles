@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STATE_FILE="$HOME/.config/hypr/gammastep_state"
+STATE_FILE="$HOME/.local/state/gammastep_state"
 THRESHOLD=0.5 # seconds
 
 if pgrep -x gammastep >/dev/null; then
@@ -23,7 +23,7 @@ fi
 
 if [ "$RUNNING" = true ]; then
   source "$STATE_FILE"
-  printf "%dK %.0f%%\n" "$TEMP" "$(awk "BEGIN {print $BRIGHT*100}")"
+  printf "%dK %.0f%% %.1f\n" "$TEMP" "$(awk "BEGIN {print $BRIGHT*100}")" "$GAMMA"
 else
   echo ""
 fi
