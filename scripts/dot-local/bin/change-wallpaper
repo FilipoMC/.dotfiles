@@ -3,8 +3,11 @@
 set -euo pipefail
 
 wp_dir=${WP_DIR:-${1:-"$HOME/Pictures/.wallpapers"}}
+wp_dir=${wp_dir#\'} # remove leading quote if present
+wp_dir=${wp_dir%\'} # remove trailing quote if present
+wp_dir=${wp_dir%/}  # remove trailing slash
 
-wp=$(find "$wp_dir"/ -type f ! -name active -printf "%P\n" | fzf)
+wp=$(find "$wp_dir"/ -type f ! -name active -printf "%P\n" | fzf --bind 'j:down,k:up' --preview-window=top --preview "chafa -s 40x40 $wp_dir/{}")
 
 command ln -sfn "$wp_dir/$wp" "$wp_dir/active"
 
