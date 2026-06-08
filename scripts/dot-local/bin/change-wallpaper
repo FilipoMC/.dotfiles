@@ -7,7 +7,7 @@ wp_dir=${wp_dir#\'} # remove leading quote if present
 wp_dir=${wp_dir%\'} # remove trailing quote if present
 wp_dir=${wp_dir%/}  # remove trailing slash
 
-wp=$(find "$wp_dir"/ -type f ! -name active -printf "%P\n" | fzf --bind 'j:down,k:up' --layout=reverse --preview-window=top:50%:border-bottom --preview "chafa --stretch -s x11 $wp_dir/{}")
+wp=$(find "$wp_dir"/ -type f ! -name active -printf "%P\n" | sort | fzf --bind 'j:down,k:up' --layout=reverse --preview-window=top:50%:border-bottom --preview "chafa --stretch -s x11 $wp_dir/{}")
 
 command ln -sfn "$wp_dir/$wp" "$wp_dir/active"
 
