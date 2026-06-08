@@ -18,4 +18,5 @@ hl.window_rule({
 	size = { "(monitor_w*0.2)", "(monitor_h*0.3)" },
 	center = true,
 	stay_focused = true,
+	pin = true,
 })
