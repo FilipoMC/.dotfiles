@@ -1,6 +1,6 @@
 return {
   "andweeb/presence.nvim",
-  lazy = false,
+  cmd = "Presence",
   config = function()
     require("presence").setup({
       main_image = "file",
