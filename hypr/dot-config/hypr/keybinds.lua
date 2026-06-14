@@ -121,12 +121,16 @@ hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "empty" }))
 hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "empty" }))
 hl.bind(mainMod .. " + ALT + grave", hl.dsp.window.move({ workspace = "empty", follow = false }))
 
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + A", hl.dsp.workspace.toggle_special("a"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-hl.bind(mainMod .. " + SHIFT + A", hl.dsp.window.move({ workspace = "special:a" }))
-hl.bind(mainMod .. " + ALT + S", hl.dsp.window.move({ workspace = "special:magic", follow = false }))
-hl.bind(mainMod .. " + ALT + A", hl.dsp.window.move({ workspace = "special:a", follow = false }))
+-- Special workspaces for letters in the array turned lowercase
+local specialWorkspaces = { "S", "A", "X" }
+for _, key in ipairs(specialWorkspaces) do
+	hl.bind(mainMod .. " + " .. key, hl.dsp.workspace.toggle_special(key:lower()))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = "special:" .. key:lower() }))
+	hl.bind(
+		mainMod .. " + ALT + " .. key,
+		hl.dsp.window.move({ workspace = "special:" .. key:lower(), follow = false })
+	)
+end
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(

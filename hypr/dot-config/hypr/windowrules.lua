@@ -20,3 +20,15 @@ hl.window_rule({
 	stay_focused = true,
 	pin = true,
 })
+
+hl.window_rule({
+	name = "launch_steam_in_special",
+	match = {
+		class = "^steam$",
+		title = "negative:^$",
+	},
+	float = true,
+	center = true,
+	size = { "(monitor_w*0.4)", "(monitor_h*0.5)" },
+	workspace = "special:s silent",
+})
