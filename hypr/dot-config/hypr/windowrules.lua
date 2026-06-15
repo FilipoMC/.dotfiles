@@ -22,13 +22,22 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "launch_steam_in_special",
+	name = "steam",
 	match = {
 		class = "^steam$",
-		title = "negative:^$",
+		title = "negative:^$", -- exclude menubar dropdowns
 	},
 	float = true,
 	center = true,
-	size = { "(monitor_w*0.4)", "(monitor_h*0.6)" },
+	size = { "(monitor_w*0.3)", "(monitor_h*0.5)" },
 	workspace = "special:s silent",
+})
+
+hl.window_rule({
+	name = "steam_main_window",
+	match = {
+		class = "^steam$",
+		title = "^Steam$",
+	},
+	size = { "(monitor_w*0.4)", "(monitor_h*0.6)" },
 })
