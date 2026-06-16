@@ -11,3 +11,13 @@ group = "git"
 url = "*/"
 run = "git"
 group = "git"
+
+# Set as wallpaper in <S-o> menu
+[[opener.set-wallpaper]]
+run = "set-wallpaper %s1"
+for = "linux"
+desc = "Set as wallpaper"
+
+[[open.prepend_rules]]
+mime = "image/*"
+use = ["set-wallpaper", "open"]

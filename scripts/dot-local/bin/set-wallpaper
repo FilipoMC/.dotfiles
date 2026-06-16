@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+set -euo pipefail
+
+wp_dir=${WP_DIR:-${2:-"$HOME/Pictures/.wallpapers"}}
+wp_dir=${wp_dir#\'} # remove leading quote if present
+wp_dir=${wp_dir%\'} # remove trailing quote if present
+wp_dir=${wp_dir%/}  # remove trailing slash
+
+wp_input=${WP:-${1}}
+
+if [ ! -f "$wp_input" ]; then
+  echo "File not found"
+  exit 1
+fi
+
+wp="$(realpath "$wp_input")"
+
+command ln -sfn "$wp" "$wp_dir/active"
+
+pkill hyprpaper || true
+hyprctl eval 'hl.exec_cmd("hyprpaper")'
