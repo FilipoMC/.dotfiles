@@ -9,11 +9,6 @@ rev = "341f289"
 hash = "f35a1a045c1dd63160fcfb62b9cb082a"
 
 [[plugin.deps]]
-use = "boydaihungst/gvfs"
-rev = "3abc0a2"
-hash = "eed89e75671723c8f9390a2862af0e4e"
-
-[[plugin.deps]]
 use = "XYenon/yafg"
 rev = "e6ba851"
 hash = "9558dd9169cbf01eac6044583c426716"
@@ -27,6 +22,26 @@ hash = "e0017cae4c0772dd41b7e7c259a6e683"
 use = "ciarandg/cd-git-root"
 rev = "a0e0f4b"
 hash = "b84a85f3b513bd9c0a0ab93cc7c8e4c3"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "598cdb6"
+hash = "88e56a64b7ce7c4314427452343fef17"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "598cdb6"
+hash = "e3260d0b1feded8c8e3ae3afa1169e30"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "598cdb6"
+hash = "c887903a63a2ff520081b6d90a4b3392"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "598cdb6"
+hash = "f0c8c378184d5f8abd1b095a443d336d"
 
 [flavor]
 deps = []

@@ -1,3 +1,6 @@
+[git]
+clean_sign = "  " # align clean files' linemode with modified ones
+
 [app]
 overall = { bg = "#24273a" }
 
