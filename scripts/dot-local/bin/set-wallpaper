@@ -7,7 +7,12 @@ wp_dir=${wp_dir#\'} # remove leading quote if present
 wp_dir=${wp_dir%\'} # remove trailing quote if present
 wp_dir=${wp_dir%/}  # remove trailing slash
 
-wp_input=${WP:-${1}}
+wp_input=${WP:-${1:-""}}
+
+if [ -z "$wp_input" ]; then
+  echo "Please provide a file name"
+  exit 1
+fi
 
 if [ ! -f "$wp_input" ]; then
   echo "File not found"
