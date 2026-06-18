@@ -20,4 +20,4 @@ desc = "Set as wallpaper"
 
 [[open.prepend_rules]]
 mime = "image/*"
-use = ["set-wallpaper", "open"]
+use = ["open", "set-wallpaper"]

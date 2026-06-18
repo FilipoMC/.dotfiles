@@ -2,6 +2,11 @@
 on = ["<S-h>"]
 run = 'shell "glry \"$PWD\"" --block'
 
+[[mgr.prepend_keymap]]
+on = ["g", "l"]
+run = 'cd --interactive'
+desc = "Jump interactively"
+
 #####################
 ###### PLUGINS ######
 #####################
