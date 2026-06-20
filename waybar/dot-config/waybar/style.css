@@ -19,7 +19,6 @@ window#waybar {
 }
 
 #window {
-  margin: 5px;
   padding-left: 8px;
   padding-right: 8px;
   color: @text;
