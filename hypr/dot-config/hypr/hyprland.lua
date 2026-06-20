@@ -1,8 +1,8 @@
-require("autostart")
-require("env")
-require("animations")
-require("keybinds")
-require("windowrules")
+require("configs.autostart")
+require("configs.env")
+require("configs.animations")
+require("configs.keybinds")
+require("configs.windowrules")
 
 hl.monitor({
 	output = "DP-1",
@@ -17,9 +17,9 @@ hl.config({
 		border_size = 1,
 
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+			active_border = { colors = { "rgba(a6e3a1ee)" } },
 			inactive_border = "rgba(595959aa)",
-			nogroup_border_active = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+			nogroup_border_active = { colors = { "rgba(a6e3a1ee)" } },
 			nogroup_border = "rgba(595959aa)",
 		},
 
