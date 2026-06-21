@@ -3,11 +3,7 @@ require("configs.env")
 require("configs.animations")
 require("configs.keybinds")
 require("configs.windowrules")
-
-hl.monitor({
-	output = "DP-1",
-	mode = "3440x1440@180",
-})
+require("monitors") -- nwg-displays auto generated file
 
 hl.config({
 	general = {
