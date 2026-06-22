@@ -1,8 +1,8 @@
-require("configs.autostart")
-require("configs.env")
-require("configs.animations")
-require("configs.keybinds")
-require("configs.windowrules")
+require("configs/autostart")
+require("configs/env")
+require("configs/animations")
+require("configs/keybinds")
+require("configs/windowrules")
 require("monitors") -- nwg-displays auto generated file
 
 hl.config({
