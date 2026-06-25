@@ -12,6 +12,26 @@ desc = "Jump interactively"
 #####################
 
 [[mgr.prepend_keymap]]
+on = "="
+run = "plugin zoom 1"
+desc = "Zoom in hovered file"
+
+[[mgr.prepend_keymap]]
+on = "-"
+run = "plugin zoom -1"
+desc = "Zoom out hovered file"
+
+[[mgr.prepend_keymap]]
+on = "<S-t>"
+run = "plugin toggle-pane max-preview"
+desc = "Maximize or restore the preview pane"
+
+[[mgr.prepend_keymap]]
+on = "<S-r>"
+run = "plugin toggle-pane max-current"
+desc = "Maximize or restore the current pane"
+
+[[mgr.prepend_keymap]]
 on = ["c", "m"]
 run = "plugin chmod"
 desc = "Chmod on selected files"

@@ -2,15 +2,9 @@
 show_hidden = true
 linemode = "size"
 
-[[plugin.prepend_fetchers]]
-url = "*"
-run = "git"
-group = "git"
-
-[[plugin.prepend_fetchers]]
-url = "*/"
-run = "git"
-group = "git"
+[preview]
+max_width = 2400
+max_height = 3000
 
 # Set as wallpaper in <S-o> menu
 [[opener.set-wallpaper]]
@@ -21,3 +15,10 @@ desc = "Set as wallpaper"
 [[open.prepend_rules]]
 mime = "image/*"
 use = ["open", "set-wallpaper"]
+
+[plugin]
+prepend_fetchers = [
+  { url = "*", run = "git", group = "git" },
+  { url = "*/", run = "git", group = "git" },
+]
+prepend_previewers = [{ mime = "audio/*", run = "exifaudio" }]

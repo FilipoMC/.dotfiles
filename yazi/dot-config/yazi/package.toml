@@ -43,5 +43,20 @@ use = "yazi-rs/plugins:chmod"
 rev = "598cdb6"
 hash = "f0c8c378184d5f8abd1b095a443d336d"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "38efe09"
+hash = "e8e279463ee99c940e6945a14cf4aa9e"
+
+[[plugin.deps]]
+use = "Sonico98/exifaudio"
+rev = "4506f9d"
+hash = "4761fffb60a12d37096c34a356380cdf"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "38efe09"
+hash = "9c7987da2d2a2120dac33abb64132004"
+
 [flavor]
 deps = []
