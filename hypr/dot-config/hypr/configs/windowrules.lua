@@ -41,3 +41,11 @@ hl.window_rule({
 	},
 	size = { "(monitor_w*0.4)", "(monitor_h*0.6)" },
 })
+
+hl.window_rule({
+	name = "pypr_calc",
+	match = {
+		class = "^kitty-calc$",
+	},
+	rounding = 0,
+})

@@ -43,6 +43,15 @@ command = "kitty --class kitty-taskbar -e btop"
 class = "kitty-taskbar"
 size = "30% 80%"
 offset = "200%"
+excludes = ["calc"]
+
+[scratchpads.calc]
+animation = "fromLeft"
+command = "kitty --class kitty-calc -e numr"
+class = "kitty-calc"
+size = "20% 80%"
+offset = "200%"
+excludes = ["taskbar"]
 
 [scratchpads.network]
 animation = "fromRight"
