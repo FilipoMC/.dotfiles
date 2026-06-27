@@ -7,6 +7,12 @@ on = ["g", "l"]
 run = 'cd --interactive'
 desc = "Jump interactively"
 
+[[mgr.prepend_keymap]]
+on = "!"
+for = "unix"
+run = 'shell "$SHELL" --block'
+desc = "Open $SHELL here"
+
 #####################
 ###### PLUGINS ######
 #####################
