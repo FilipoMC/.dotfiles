@@ -99,9 +99,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-ezacmd='eza --icons -L 2 --git --git-repos'
-alias lsp="$ezacmd"
-alias ls="$ezacmd --no-permissions"
 alias vim='nvim'
 alias vi="nvim"
 alias lgit="lazygit"
@@ -111,6 +108,7 @@ alias wlc="wl-copy"
 alias mkdir="mkdir -p"
 alias cat="bat"
 alias yt-mp3="yt-dlp -x --audio-format mp3"
+alias tauri-run="WEBKIT_DISABLE_COMPOSITING_MODE=1"
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -132,6 +130,28 @@ function mkcd() {
   fi
 
   command mkdir -p -- $1 ; builtin cd -- $1
+}
+
+ezacmd=(eza --icons -L 2 --git --git-repos)
+
+function ls() {
+  if [[ ${PWD##*/} == 'Downloads' ]]; then
+    "$ezacmd[@]" --no-permissions -s=modified "$@"
+  else
+    "$ezacmd[@]" --no-permissions "$@"
+  fi
+}   
+
+function lsp() {
+  if [[ ${PWD##*/} == 'Downloads' ]]; then
+    "$ezacmd[@]" -s=modified "$@"
+  else
+    "$ezacmd[@]" "$@"
+  fi
+}
+
+function lst() {
+  "$ezacmd[@]" --no-permissions -s=extension "$@"
 }
 
 # Begin: PlatformIO Core completion support
