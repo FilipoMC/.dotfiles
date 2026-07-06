@@ -16,43 +16,35 @@ hl.bind(mainMod .. " + CTRL + F", hl.dsp.window.fullscreen({ mode = "maximized" 
 
 -- Keyboard
 
-hl.bind("CTRL + Menu", hl.dsp.exec_cmd("~/.config/hypr/switch-layout.sh"))
-hl.bind("Menu", hl.dsp.exec_cmd("~/.config/hypr/toggle-caps2esc.sh"))
+hl.bind("CTRL + Menu", hl.dsp.exec_cmd("~/.local/bin/next-kb-layout"))
+hl.bind("Menu", hl.dsp.exec_cmd("~/.local/bin/toggle-caps2esc"))
 
 -- Gammastep
 
-hl.bind(
-	mainMod .. " + bracketleft",
-	hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh temp_down"),
-	{ repeating = true }
-)
-hl.bind(
-	mainMod .. " + bracketright",
-	hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh temp_up"),
-	{ repeating = true }
-)
+hl.bind(mainMod .. " + bracketleft", hl.dsp.exec_cmd("~/.local/bin/gammastep-change temp_down"), { repeating = true })
+hl.bind(mainMod .. " + bracketright", hl.dsp.exec_cmd("~/.local/bin/gammastep-change temp_up"), { repeating = true })
 hl.bind(
 	mainMod .. " + SHIFT + bracketleft",
-	hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh bright_down"),
+	hl.dsp.exec_cmd("~/.local/bin/gammastep-change bright_down"),
 	{ repeating = true }
 )
 hl.bind(
 	mainMod .. " + SHIFT + bracketright",
-	hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh bright_up"),
+	hl.dsp.exec_cmd("~/.local/bin/gammastep-change bright_up"),
 	{ repeating = true }
 )
 hl.bind(
 	mainMod .. " + ALT + bracketleft",
-	hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh gamma_down"),
+	hl.dsp.exec_cmd("~/.local/bin/gammastep-change gamma_down"),
 	{ repeating = true }
 )
 hl.bind(
 	mainMod .. " + ALT + bracketright",
-	hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh gamma_up"),
+	hl.dsp.exec_cmd("~/.local/bin/gammastep-change gamma_up"),
 	{ repeating = true }
 )
-hl.bind(mainMod .. " + CTRL + bracketleft", hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh reset"))
-hl.bind(mainMod .. " + CTRL + bracketright", hl.dsp.exec_cmd("~/.config/hypr/gammastep-change.sh off"))
+hl.bind(mainMod .. " + CTRL + bracketleft", hl.dsp.exec_cmd("~/.local/bin/gammastep-change reset"))
+hl.bind(mainMod .. " + CTRL + bracketright", hl.dsp.exec_cmd("~/.local/bin/gammastep-change off"))
 
 -- Windows
 
@@ -90,8 +82,8 @@ hl.bind(mainMod .. " + ALT + SHIFT + S", hl.dsp.exec_cmd("pkill -9 hyprpicker"))
 hl.bind("Print", hl.dsp.exec_cmd(drawScreenshotCommand))
 
 hl.bind(mainMod .. " + CTRL + R", hl.dsp.exec_cmd("killall -SIGUSR1 gpu-screen-recorder"))
-hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("~/.config/hypr/fuzzel-hyprpicker.sh"))
-hl.bind(mainMod .. " + CTRL + V", hl.dsp.exec_cmd("~/.config/hypr/fuzzel-cliphist.sh"))
+hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("~/.local/bin/color-picker"))
+hl.bind(mainMod .. " + CTRL + V", hl.dsp.exec_cmd("~/.local/bin/clipboard-hist"))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + CTRL + escape", hl.dsp.exec_cmd("nwg-bar"))
 
@@ -169,19 +161,7 @@ hl.bind("mouse:276", hl.dsp.pass({ window = "class:^(discord)$" }), { non_consum
 hl.bind("CTRL + Y", hl.dsp.pass({ window = "class:^(BlurAutoClicker)$" }, { non_consuming = true }))
 
 -- Discord overlay toggle
-hl.bind(mainMod .. " + G", function()
-	local handle = io.popen("pgrep -f discover-overlay")
-	if handle ~= nil then
-		local pid = handle:read("*a"):gsub("\n$", "")
-		handle:close()
-
-		if pid ~= "" then
-			hl.exec_cmd("kill " .. pid)
-		else
-			hl.exec_cmd("discover-overlay")
-		end
-	end
-end)
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("killall discover-overlay || discover-overlay"))
 
 -- wallpaper change
 hl.bind(
