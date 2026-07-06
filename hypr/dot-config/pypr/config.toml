@@ -55,7 +55,7 @@ excludes = ["taskbar"]
 
 [scratchpads.network]
 animation = "fromRight"
-command = "kitty --class kitty-network -e ~/.config/hypr/nmtui.sh"
+command = "kitty --class kitty-network -e ~/.config/pypr/nmtui"
 class = "kitty-network"
 size = "20% 60%"
 offset = "200%"
