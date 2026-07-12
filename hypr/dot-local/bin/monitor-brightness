@@ -10,20 +10,22 @@ if [[ -z "$current" || -z "$max" ]]; then
 fi
 
 increment=${2:-10}
+((increment == 0)) && increment=10
+vcp=${3:-10}
 
 case "$1" in
 up)
   new=$((current + increment))
-  ddcutil setvcp 10 "$((new > max ? max : new))"
+  ddcutil setvcp "$vcp" "$((new > max ? max : new))"
   ;;
 down)
   new=$((current - increment))
-  ddcutil setvcp 10 "$((new < 0 ? 0 : new))"
+  ddcutil setvcp "$vcp" "$((new < 0 ? 0 : new))"
   ;;
 max)
-  ddcutil setvcp 10 "$max"
+  ddcutil setvcp "$vcp" "$max"
   ;;
 min)
-  ddcutil setvcp 10 0
+  ddcutil setvcp "$vcp" 0
   ;;
 esac
