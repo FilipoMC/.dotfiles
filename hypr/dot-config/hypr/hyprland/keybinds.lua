@@ -46,6 +46,13 @@ hl.bind(
 hl.bind(mainMod .. " + CTRL + bracketleft", hl.dsp.exec_cmd("~/.local/bin/gammastep-change reset"))
 hl.bind(mainMod .. " + CTRL + bracketright", hl.dsp.exec_cmd("~/.local/bin/gammastep-change off"))
 
+-- Monitor brightness
+
+hl.bind(mainMod .. " + minus", hl.dsp.exec_cmd("~/.local/bin/monitor-brightness down"))
+hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("~/.local/bin/monitor-brightness up"))
+hl.bind(mainMod .. " + SHIFT + minus", hl.dsp.exec_cmd("~/.local/bin/monitor-brightness min"))
+hl.bind(mainMod .. " + SHIFT + equal", hl.dsp.exec_cmd("~/.local/bin/monitor-brightness max"))
+
 -- Windows
 
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
@@ -79,7 +86,7 @@ local drawScreenshotCommand = "flameshot gui"
 
 hl.bind(mainMod .. " + CTRL + SHIFT + S", hl.dsp.exec_cmd(screenshotCommand))
 hl.bind(mainMod .. " + ALT + SHIFT + S", hl.dsp.exec_cmd("pkill -9 hyprpicker"))
-hl.bind("Print", hl.dsp.exec_cmd(drawScreenshotCommand))
+hl.bind("Print", hl.dsp.exec_cmd(drawScreenshotCommand), { ignore_mods = true })
 
 hl.bind(mainMod .. " + CTRL + R", hl.dsp.exec_cmd("killall -SIGUSR1 gpu-screen-recorder"))
 hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("~/.local/bin/color-picker"))

@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+exec 9>/tmp/monitor-brightness.lock
+flock -w 3 9 || exit 0
+
+read -r _ _ _ current max < <(ddcutil getvcp 10 -t)
+
+if [[ -z "$current" || -z "$max" ]]; then
+  exit 1
+fi
+
+increment=${2:-10}
+
+case "$1" in
+up)
+  new=$((current + increment))
+  ddcutil setvcp 10 "$((new > max ? max : new))"
+  ;;
+down)
+  new=$((current - increment))
+  ddcutil setvcp 10 "$((new < 0 ? 0 : new))"
+  ;;
+max)
+  ddcutil setvcp 10 "$max"
+  ;;
+min)
+  ddcutil setvcp 10 0
+  ;;
+esac
