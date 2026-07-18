@@ -53,6 +53,11 @@ hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("~/.local/bin/monitor-brightness 
 hl.bind(mainMod .. " + SHIFT + minus", hl.dsp.exec_cmd("~/.local/bin/monitor-brightness min"))
 hl.bind(mainMod .. " + SHIFT + equal", hl.dsp.exec_cmd("~/.local/bin/monitor-brightness max"))
 
+-- VPN
+
+hl.bind(mainMod .. " + ALT + P", hl.dsp.exec_cmd("protonvpn connect"))
+hl.bind(mainMod .. " + SHIFT + ALT + P", hl.dsp.exec_cmd("protonvpn disconnect"))
+
 -- Windows
 
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
