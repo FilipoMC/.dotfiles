@@ -1,4 +1,4 @@
-@import "mocha.css";
+@import "colors.css";
 
 * {
   font-family:
@@ -70,6 +70,7 @@ button:hover {
 #custom-keyboard-layout,
 #custom-gammastep,
 #custom-caps2esc-status,
+#custom-nmvpn,
 #tray {
   margin-top: 2px;
   margin-bottom: 2px;
@@ -108,6 +109,22 @@ button:hover {
   border-bottom: 2px solid @yellow;
 }
 
+#network,
+#custom-nmvpn {
+  min-width: 15px;
+}
+
+#custom-nmvpn.connected {
+  color: @sky;
+  border-bottom: 2px solid @sky;
+}
+
+#network.disconnected,
+#custom-nmvpn.error {
+  color: red;
+  border-bottom: 2px solid red;
+}
+
 #idle_inhibitor {
   margin-right: 12px;
   color: #7cb342;
@@ -120,16 +137,11 @@ button:hover {
 
 #custom-caps2esc-status,
 #custom-keyboard-layout {
-  min-width: 30px;
+  margin-left: 12px;
 }
 
 #cpu {
   min-width: 45px;
-}
-
-#network.disconnected {
-  color: red;
-  border-bottom: 2px solid red;
 }
 
 #bluetooth {
