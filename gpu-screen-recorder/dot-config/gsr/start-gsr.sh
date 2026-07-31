@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 ! command -v gpu-screen-recorder && exit 0
 
