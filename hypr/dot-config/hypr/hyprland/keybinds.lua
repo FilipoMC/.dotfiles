@@ -21,30 +21,20 @@ hl.bind("Menu", hl.dsp.exec_cmd("~/.local/bin/toggle-caps2esc"))
 
 -- Gammastep
 
-hl.bind(mainMod .. " + bracketleft", hl.dsp.exec_cmd("~/.local/bin/gammastep-change temp_down"), { repeating = true })
-hl.bind(mainMod .. " + bracketright", hl.dsp.exec_cmd("~/.local/bin/gammastep-change temp_up"), { repeating = true })
+hl.bind(mainMod .. " + bracketleft", hl.dsp.exec_cmd("~/.local/bin/hyprsunset-change temp_down"), { repeating = true })
+hl.bind(mainMod .. " + bracketright", hl.dsp.exec_cmd("~/.local/bin/hyprsunset-change temp_up"), { repeating = true })
 hl.bind(
 	mainMod .. " + SHIFT + bracketleft",
-	hl.dsp.exec_cmd("~/.local/bin/gammastep-change bright_down"),
+	hl.dsp.exec_cmd("~/.local/bin/hyprsunset-change gamma_down"),
 	{ repeating = true }
 )
 hl.bind(
 	mainMod .. " + SHIFT + bracketright",
-	hl.dsp.exec_cmd("~/.local/bin/gammastep-change bright_up"),
+	hl.dsp.exec_cmd("~/.local/bin/hyprsunset-change gamma_up"),
 	{ repeating = true }
 )
-hl.bind(
-	mainMod .. " + ALT + bracketleft",
-	hl.dsp.exec_cmd("~/.local/bin/gammastep-change gamma_down"),
-	{ repeating = true }
-)
-hl.bind(
-	mainMod .. " + ALT + bracketright",
-	hl.dsp.exec_cmd("~/.local/bin/gammastep-change gamma_up"),
-	{ repeating = true }
-)
-hl.bind(mainMod .. " + CTRL + bracketleft", hl.dsp.exec_cmd("~/.local/bin/gammastep-change reset"))
-hl.bind(mainMod .. " + CTRL + bracketright", hl.dsp.exec_cmd("~/.local/bin/gammastep-change off"))
+hl.bind(mainMod .. " + CTRL + bracketleft", hl.dsp.exec_cmd("~/.local/bin/hyprsunset-change reset"))
+hl.bind(mainMod .. " + CTRL + bracketright", hl.dsp.exec_cmd("~/.local/bin/hyprsunset-change off"))
 
 -- Monitor brightness
 

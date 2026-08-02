@@ -21,7 +21,7 @@
   ],
 
   "custom/gammastep": {
-    "exec": "~/.config/waybar/scripts/gammastep_status.sh",
+    "exec": "~/.config/waybar/scripts/hyprsunset_status.sh",
     "signal": 7,
     "interval": 1,
     "return-type": "text",

@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+if [ "$1" = "off" ]; then
+  pkill hyprsunset
+  exit
+fi
+
+STATE_FILE="$HOME/.local/state/hyprsunset_state"
+
+DEFAULTTEMP=6500
+DEFAULTGAMMA=100
+MINGAMMA=10
+MAXGAMMA=200
+
+TEMP="$DEFAULTTEMP"
+GAMMA="$DEFAULTGAMMA"
+
+# Load current state if exists
+[ -f "$STATE_FILE" ] && source "$STATE_FILE"
+
+if ! pgrep --quiet -x hyprsunset; then
+  if [[ "$TEMP" = "$DEFAULTTEMP" ]]; then
+    hyprsunset --gamma_max "$MAXGAMMA" -i -g "$GAMMA" &
+  else
+    hyprsunset --gamma_max "$MAXGAMMA" -t "$TEMP" -g "$GAMMA" &
+  fi
+fi
+
+case "$1" in
+temp_up)
+  TEMP=$((TEMP + 100))
+  hyprctl hyprsunset temperature "$TEMP"
+  ;;
+temp_down)
+  TEMP=$((TEMP - 100))
+  hyprctl hyprsunset temperature "$TEMP"
+  ;;
+gamma_up)
+  GAMMA=$((GAMMA + 10))
+  GAMMA="$((GAMMA > "$MAXGAMMA" ? "$MAXGAMMA" : GAMMA))"
+  hyprctl hyprsunset gamma "$GAMMA"
+  ;;
+gamma_down)
+  GAMMA=$((GAMMA - 10))
+  GAMMA="$((GAMMA < "$MINGAMMA" ? "$MINGAMMA" : GAMMA))"
+  hyprctl hyprsunset gamma "$GAMMA"
+  ;;
+reset)
+  TEMP="$DEFAULTTEMP"
+  GAMMA="$DEFAULTGAMMA"
+  hyprctl hyprsunset identity
+  sleep 0.5
+  hyprctl hyprsunset gamma "$GAMMA"
+  ;;
+esac
+
+# Save state
+echo "TEMP=$TEMP" >"$STATE_FILE"
+echo "GAMMA=$GAMMA" >>"$STATE_FILE"
+
+# Apply changes instantly
+pkill -RTMIN+7 waybar
