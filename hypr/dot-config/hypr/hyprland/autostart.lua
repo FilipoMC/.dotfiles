@@ -1,5 +1,5 @@
 hl.on("hyprland.start", function()
-	hl.exec_cmd("hyprctl setcursor catppuccin-mocha-dark-cursors 20")
+	hl.exec_cmd("hyprctl setcursor Adwaita 20")
 	-- hl.exec_cmd("hyprpm reload")
 
 	hl.exec_cmd("~/.config/gsr/start-gsr.sh")
