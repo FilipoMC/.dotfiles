@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ "$(systemctl is-active udevmon)" = "active" ]; then
   RUNNING=true

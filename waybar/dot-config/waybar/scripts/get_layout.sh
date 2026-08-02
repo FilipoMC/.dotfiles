@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get the first connected keyboard name
 keyboard="razer-razer-blackwidow-v3-7"
