@@ -17,7 +17,7 @@
   "notification-window-width": 300,
   "scripts": {
     "play-sound-on-notify": {
-      "exec": "paplay /usr/share/sounds/LinuxMint/stereo/notification.oga",
+      "exec": "paplay ~/.config/swaync/notification.oga",
       "urgency": "Low|Normal|Critical"
     }
   },
