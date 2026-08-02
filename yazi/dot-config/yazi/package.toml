@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "XYenon/clipboard"
-rev = "0ac0320"
-hash = "f80172438b4b5c31e94d6c891f734445"
+rev = "d4d19ea"
+hash = "2cfc56d62f9ca0c62ce356e4364c3d89"
 
 [[plugin.deps]]
 use = "jaam8/wise-enter"
@@ -25,7 +25,7 @@ hash = "b84a85f3b513bd9c0a0ab93cc7c8e4c3"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "598cdb6"
+rev = "56d6277"
 hash = "88e56a64b7ce7c4314427452343fef17"
 
 [[plugin.deps]]
