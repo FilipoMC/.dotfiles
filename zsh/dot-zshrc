@@ -111,8 +111,9 @@ alias yt-mp3="yt-dlp -x --audio-format mp3"
 alias tauri-run="WEBKIT_DISABLE_COMPOSITING_MODE=1"
 
 # Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+
+(( $+commands[fzf] )) && eval "$(fzf --zsh)"
+(( $+commands[zoxide] )) && eval "$(zoxide init --cmd cd zsh)"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -135,6 +136,11 @@ function mkcd() {
 ezacmd=(eza --icons -L 2 --git --git-repos)
 
 function ls() {
+  if ! (( $+commands[eza] )); then
+    command ls
+    return 0 
+  fi
+
   if [[ ${PWD##*/} == 'Downloads' ]]; then
     "$ezacmd[@]" --no-permissions -s=modified "$@"
   else
@@ -155,14 +161,11 @@ function lst() {
 }
 
 # Begin: PlatformIO Core completion support
-eval "$(_PIO_COMPLETE=zsh_source pio)"
+(( $+commands[pio] )) && eval "$(_PIO_COMPLETE=zsh_source pio)"
 # End: PlatformIO Core completion support
 
 # node version manager
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-if (( $+commands[atuin] )) then
-  eval "$(atuin init zsh --disable-up-arrow)"
-fi
-
+(( $+commands[atuin] )) && eval "$(atuin init zsh --disable-up-arrow)"
