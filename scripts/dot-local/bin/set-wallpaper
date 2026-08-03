@@ -23,5 +23,8 @@ wp="$(realpath "$wp_input")"
 
 command ln -sfn "$wp" "$wp_dir/active"
 
-pkill hyprpaper || true
-hyprctl eval 'hl.exec_cmd("hyprpaper")'
+if ! pgrep --quiet -x hyprpaper; then
+  hyprctl eval 'hl.exec_cmd("hyprpaper")'
+fi
+
+hyprctl hyprpaper wallpaper ,"$wp_dir/active"

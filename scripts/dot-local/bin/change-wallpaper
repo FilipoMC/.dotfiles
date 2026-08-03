@@ -11,5 +11,8 @@ wp=$(find "$wp_dir"/ -type f ! -name active -printf "%P\n" | sort | fzf --bind '
 
 command ln -sfn "$wp_dir/$wp" "$wp_dir/active"
 
-pkill hyprpaper || true
-hyprctl eval 'hl.exec_cmd("hyprpaper")'
+if ! pgrep --quiet -x hyprpaper; then
+  hyprctl eval 'hl.exec_cmd("hyprpaper")'
+fi
+
+hyprctl hyprpaper wallpaper ,"$wp_dir/active"
