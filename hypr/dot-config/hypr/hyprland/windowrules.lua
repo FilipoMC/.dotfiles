@@ -49,3 +49,14 @@ hl.window_rule({
 	},
 	rounding = 0,
 })
+
+hl.window_rule({
+	name = "easy_effects",
+	match = {
+		class = "^com.github.wwmm.easyeffects$",
+	},
+	float = true,
+	center = true,
+	size = { "(monitor_w*0.35)", "(monitor_h*0.7)" },
+	workspace = "special:x silent",
+})
