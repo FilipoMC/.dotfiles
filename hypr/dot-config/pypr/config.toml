@@ -29,7 +29,7 @@ offset = "200%"
 [scratchpads.spotify]
 animation = "fromTop"
 command = "spotify"
-class = "Spotify"
+class = "spotify"
 size = "45% 55%"
 offset = "200%"
 excludes = ["term"]

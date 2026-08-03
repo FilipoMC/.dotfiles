@@ -7,7 +7,7 @@ output_dir=~/Videos/gpu-screen-rec/
 mkdir -p "$output_dir"
 
 gpu-screen-recorder -r 240 \
-  -w screen -a app-inverse:audio-src \
+  -w screen -a app-inverse:spotify \
   -bm vbr -q medium \
   -fm vfr -f 24 \
   -k hevc \
