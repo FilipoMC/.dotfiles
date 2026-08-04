@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-if pgrep -x udevmon >/dev/null; then
-  sudo systemctl stop udevmon
+if [ "$(systemctl is-active interception-tools)" = "active" ]; then
+  sudo systemctl stop interception-tools
 else
-  sudo systemctl start udevmon
+  sudo systemctl start interception-tools
 fi
 
 pkill -RTMIN+9 waybar

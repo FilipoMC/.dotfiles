@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$(systemctl is-active udevmon)" = "active" ]; then
+if [ "$(systemctl is-active interception-tools)" = "active" ]; then
   RUNNING=true
 else
   RUNNING=false
