@@ -18,6 +18,12 @@ window#waybar {
   border-bottom: 1px solid @overlay1;
 }
 
+tooltip {
+  background-color: @crust;
+  border-radius: 0px;
+  border: 1px solid @overlay1;
+}
+
 #window {
   padding-left: 8px;
   padding-right: 8px;
