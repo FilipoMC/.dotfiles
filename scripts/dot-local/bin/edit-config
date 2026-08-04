@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+NIXOS_DIR="$HOME/nixos"
+DOTFILES_DIR="$HOME/.dotfiles"
+
+choice=$(printf "nixos\nnixos-host\ndotfiles" | fzf --bind 'j:down,k:up' --prompt="Config: ")
+
+case "$choice" in
+nixos)
+  cd "$NIXOS_DIR" || echo "Dir not found."
+  nvim configuration.nix
+  ;;
+nixos-host)
+  cd "$NIXOS_DIR" || echo "Dir not found."
+  nvim "hosts/$(hostname)/default.nix"
+  ;;
+dotfiles)
+  cd "$DOTFILES_DIR" || echo "Dir not found."
+  nvim
+  ;;
+esac
+
+zsh -i
