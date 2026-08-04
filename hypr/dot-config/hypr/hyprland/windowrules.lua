@@ -18,7 +18,6 @@ hl.window_rule({
 	size = { "(monitor_w*0.2)", "(monitor_h*0.3)" },
 	center = true,
 	stay_focused = true,
-	pin = true,
 })
 
 hl.window_rule({
@@ -59,4 +58,14 @@ hl.window_rule({
 	center = true,
 	size = { "(monitor_w*0.35)", "(monitor_h*0.7)" },
 	workspace = "special:x silent",
+})
+
+hl.window_rule({
+	name = "desktop_portal",
+	match = {
+		title = "^Select what to share$",
+	},
+	float = true,
+	center = true,
+	size = { "(monitor_w*0.3)", "(monitor_h*0.4)" },
 })
