@@ -89,6 +89,11 @@ hl.bind(mainMod .. " + CTRL + V", hl.dsp.exec_cmd("~/.local/bin/clipboard-hist")
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + CTRL + escape", hl.dsp.exec_cmd("nwg-bar"))
 
+hl.bind(
+	mainMod .. " + CTRL + return",
+	hl.dsp.exec_cmd("kitty --class file_manager -o confirm_os_window_close=0 zsh -lic ~/.local/bin/edit-config")
+)
+
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("nmcli device wifi rescan"))
 
 -- Pyprland scratchpads toggle
