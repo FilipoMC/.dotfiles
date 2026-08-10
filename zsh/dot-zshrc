@@ -1,3 +1,4 @@
+# vim: set filetype=zsh :
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -38,7 +39,7 @@ source ~/.zsh-catppuccin.zsh
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+(( $+commands[fzf] )) && zinit light Aloxaf/fzf-tab
 # zinit light jeffreytse/zsh-vi-mode
 zinit light zshzoo/cd-ls
 zinit light givensuman/zsh-allclear
