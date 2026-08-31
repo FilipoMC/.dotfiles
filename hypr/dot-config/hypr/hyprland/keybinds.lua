@@ -121,7 +121,7 @@ hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "empty" 
 hl.bind(mainMod .. " + ALT + grave", hl.dsp.window.move({ workspace = "empty", follow = false }))
 
 -- Special workspaces for letters in the array turned lowercase
-local specialWorkspaces = { "S", "A", "X" }
+local specialWorkspaces = { "S", "A", "X", "Z" }
 for _, key in ipairs(specialWorkspaces) do
 	hl.bind(mainMod .. " + " .. key, hl.dsp.workspace.toggle_special(key:lower()))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = "special:" .. key:lower() }))

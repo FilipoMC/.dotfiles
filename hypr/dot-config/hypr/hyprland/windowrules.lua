@@ -1,4 +1,36 @@
 hl.window_rule({
+	-- Ignore maximize requests from all apps. You'll probably like this.
+	name = "suppress-maximize-events",
+	match = { class = ".*" },
+
+	suppress_event = "maximize",
+})
+
+hl.window_rule({
+	-- Fix some dragging issues with XWayland
+	name = "fix-xwayland-drags",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = true,
+		float = true,
+		fullscreen = false,
+		pin = false,
+	},
+
+	no_focus = true,
+})
+
+hl.window_rule({
+	name = "disable-xdg-drag",
+	match = {
+		class = ".*",
+	},
+
+	-- no_xdg_drags = true,
+})
+
+hl.window_rule({
 	name = "termfilechooser",
 	match = {
 		class = "^(termfilechooser|Xdg-desktop-portal-gtk)$",
@@ -57,7 +89,7 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = { "(monitor_w*0.35)", "(monitor_h*0.7)" },
-	workspace = "special:x silent",
+	workspace = "special:z silent",
 })
 
 hl.window_rule({
