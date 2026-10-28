@@ -7,16 +7,20 @@ output_dir=~/Videos/gpu-screen-rec/
 mkdir -p "$output_dir"
 
 gpu-screen-recorder -r 240 \
-  -w screen -a app-inverse:spotify \
+  -w screen \
+  -a "app-inverse:spotify" \
+  -a "default_input" \
   -bm vbr -q medium \
   -fm vfr -f 24 \
   -k hevc \
   -s 2580x1080 \
-  -c mp4 -o "$output_dir" \
+  -c mkv -o "$output_dir" \
   -sc ~/.config/gsr/on_clip.sh \
   -fallback-cpu-encoding yes
 
-# record whole screen, exclude spotify audio
+# record whole screen
+# audio 1 - system and spotify
+# audio 2 - mic
 # const bitrate, 6mbps
 # const fps, 24
 # codec

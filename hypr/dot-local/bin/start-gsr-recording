@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+! command -v gpu-screen-recorder && exit 0
+
+output_dir=~/Videos/recordings/
+
+mkdir -p "$output_dir"
+
+gpu-screen-recorder \
+  -w portal \
+  -a "app-inverse:spotify" \
+  -a "default_input" \
+  -o "$output_dir/recording-$(date +%Y-%m-%d_%H-%M-%S).mkv" \
+  -fallback-cpu-encoding yes
+
+# audio 1 - system and spotify
+# audio 2 - mic
