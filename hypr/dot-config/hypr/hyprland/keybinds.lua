@@ -168,7 +168,7 @@ hl.bind("mouse:276", hl.dsp.pass({ window = "class:^(discord)$" }), { non_consum
 hl.bind("CTRL + Y", hl.dsp.pass({ window = "class:^(BlurAutoClicker)$" }, { non_consuming = true }))
 
 -- Discord overlay toggle
-hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("killall discover-overlay || discover-overlay"))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("pkill discover || discover-overlay"))
 
 -- wallpaper change
 hl.bind(
